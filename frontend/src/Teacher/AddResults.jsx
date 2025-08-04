@@ -1,8 +1,8 @@
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Header from '../Components/Header'; // adjust path as needed
-import Footer from '../Components/Footer'; // adjust path as needed
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const TeacherAddResult = () => {
   const [formData, setFormData] = useState({
@@ -107,7 +107,7 @@ const TeacherAddResult = () => {
       {/* ✅ Footer */}
       <footer className="bg-white border-t">
         <Footer />
-      </footer>
+            </footer>
     </div>
   );
 };
