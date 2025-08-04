@@ -15,7 +15,7 @@ const FeeStatus = () => {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/payments/student/${studentId}`);
+        const res = await axios.get(`https://ss-schoolkodbloom.onrender.com/api/payments/student/${studentId}`);
         setPayments(res.data);
       } catch (err) {
         alert("❌ Unable to load payments.");

@@ -12,7 +12,7 @@ function TeacherLogin() {
     e.preventDefault();
 
     try {
-      const res = await axios.post('http://localhost:5000/api/teachers/login', {
+      const res = await axios.post('https://ss-schoolkodbloom.onrender.com/api/teachers/login', {
         email,
         password,
       });

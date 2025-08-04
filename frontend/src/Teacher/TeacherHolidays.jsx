@@ -11,7 +11,7 @@ const Holidays = () => {
   useEffect(() => {
     const fetchHolidays = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/holidays");
+        const res = await axios.get("https://ss-schoolkodbloom.onrender.com/api/holidays");
         setHolidays(res.data);
       } catch (err) {
         console.error("Error fetching holidays:", err);

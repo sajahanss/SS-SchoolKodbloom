@@ -49,7 +49,7 @@ const EnquiryForm = () => {
     setIsSubmitting(true);
     
     try {
-      await axios.post("http://localhost:5000/api/enquiry", formData);
+      await axios.post("https://ss-schoolkodbloom.onrender.com/api/enquiry", formData);
       setSuccess("Enquiry submitted successfully!");
       setError("");
       setFormData({ 

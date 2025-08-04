@@ -23,7 +23,7 @@ const AddHolidays = () => {
 
   const fetchHolidays = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/holidays");
+      const res = await axios.get("https://ss-schoolkodbloom.onrender.com/api/holidays");
       setHolidays(res.data);
     } catch (err) {
       console.error("Error fetching holidays:", err);
@@ -39,7 +39,7 @@ const AddHolidays = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/holidays/add", form);
+      await axios.post("https://ss-schoolkodbloom.onrender.com/api/holidays/add", form);
       alert("✅ Holiday added successfully!");
       resetForm();
       fetchHolidays();
@@ -61,7 +61,7 @@ const AddHolidays = () => {
     if (!window.confirm("Are you sure you want to delete this holiday?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/holidays/delete/${id}`);
+      await axios.delete(`https://ss-schoolkodbloom.onrender.com/api/holidays/delete/${id}`);
       alert("❌ Holiday deleted successfully!");
       fetchHolidays();
     } catch (err) {

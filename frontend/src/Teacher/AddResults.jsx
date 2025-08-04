@@ -23,7 +23,7 @@ const TeacherAddResult = () => {
 
   // Fetch existing results on mount
   useEffect(() => {
-    axios.get('http://localhost:5000/api/results')
+    axios.get('https://ss-schoolkodbloom.onrender.com/api/results')
       .then((res) => setResults(res.data))
       .catch(() => setError('❌ Failed to fetch results. Please try again later.'));
   }, []);
@@ -37,7 +37,7 @@ const TeacherAddResult = () => {
     e.preventDefault();
     setError('');
     try {
-      const res = await axios.post('http://localhost:5000/api/results', formData);
+      const res = await axios.post('https://ss-schoolkodbloom.onrender.com/api/results', formData);
       setResults([...results, res.data]);
       setFormData({
         studentName: '',

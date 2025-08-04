@@ -11,7 +11,7 @@ function AdminLogin() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/admins/login", {
+      const res = await axios.post("https://ss-schoolkodbloom.onrender.com/api/admins/login", {
         email,
         password,
       });

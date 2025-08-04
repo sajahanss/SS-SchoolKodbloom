@@ -12,7 +12,7 @@ function ViewTimeTable() {
     if (!teacherName) return;
 
     axios
-      .get(`http://localhost:5000/api/timetable/teacher/${teacherName}`)
+      .get(`https://ss-schoolkodbloom.onrender.com/api/timetable/teacher/${teacherName}`)
       .then((res) => setTimeTable(res.data))
       .catch((err) => console.error("Error fetching timetable:", err));
   }, [teacherName]);

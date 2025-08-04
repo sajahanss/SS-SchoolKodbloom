@@ -10,7 +10,7 @@ const TeacherLeaveRequestModal = ({ open, onClose, teacherId, onApprovalChange }
   const fetchRequests = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(`http://localhost:5000/api/leave-requests/teacher/${teacherId}`);
+      const res = await axios.get(`https://ss-schoolkodbloom.onrender.com/api/leave-requests/teacher/${teacherId}`);
       setRequests(res.data.filter(r => r.status === 'Pending'));
     } catch (err) {
       console.error('Error fetching leave requests', err);
@@ -25,9 +25,9 @@ const TeacherLeaveRequestModal = ({ open, onClose, teacherId, onApprovalChange }
 
   const handleDecision = async (id, status, studentId, dateRange) => {
     try {
-      await axios.put(`http://localhost:5000/api/leave-requests/${id}/status`, { status });
+      await axios.put(`https://ss-schoolkodbloom.onrender.com/api/leave-requests/${id}/status`, { status });
       if (status === 'Approved') {
-        await axios.post('http://localhost:5000/api/attendance/mark-leave', {
+        await axios.post('https://ss-schoolkodbloom.onrender.com/api/attendance/mark-leave', {
           studentId,
           fromDate: dateRange.fromDate,
           toDate: dateRange.toDate,

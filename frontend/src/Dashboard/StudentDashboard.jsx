@@ -95,7 +95,7 @@ const StudentDashboard = () => {
                   <span className="text-xs text-gray-500">Class {className} • Sec {section}</span>
                 </div>
                 <img
-                  src={profileImage ? `http://localhost:5000/uploads/${profileImage}` : `https://ui-avatars.com/api/?name=${encodeURIComponent(name || 'Student')}&background=random`}
+                  src={profileImage ? `https://ss-schoolkodbloom.onrender.com/uploads/${profileImage}` : `https://ui-avatars.com/api/?name=${encodeURIComponent(name || 'Student')}&background=random`}
                   alt="Profile"
                   className="object-cover border border-gray-300 rounded-full w-9 h-9"
                   onError={e => {

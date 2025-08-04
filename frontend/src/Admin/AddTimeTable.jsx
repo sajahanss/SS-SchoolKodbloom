@@ -66,7 +66,7 @@ function UploadTimeTable() {
         }
 
         const res = await axios.post(
-          'http://localhost:5000/api/timetable/bulk-upload', 
+          'https://ss-schoolkodbloom.onrender.com/api/timetable/bulk-upload', 
           { timetable: jsonData }
         );
 

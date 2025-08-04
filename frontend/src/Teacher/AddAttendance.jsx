@@ -20,7 +20,7 @@ const AddAttendance = () => {
   // Fetch students under this teacher
   const fetchStudents = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/teachers/${teacherId}/students`);
+      const res = await axios.get(`https://ss-schoolkodbloom.onrender.com/api/teachers/${teacherId}/students`);
       setStudents(res.data);
     } catch (err) {
       toast.error("Failed to load students.");
@@ -30,7 +30,7 @@ const AddAttendance = () => {
   // Fetch teacher's name
   const fetchTeacher = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/teachers/${teacherId}`);
+      const res = await axios.get(`https://ss-schoolkodbloom.onrender.com/api/teachers/${teacherId}`);
       setTeacherName(res.data.name || "");
     } catch (err) {
       console.error("Failed to fetch teacher name.");
@@ -40,7 +40,7 @@ const AddAttendance = () => {
   // Fetch pending leave requests
   const fetchPendingCount = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/leave-requests/teacher/${teacherId}`);
+      const res = await axios.get(`https://ss-schoolkodbloom.onrender.com/api/leave-requests/teacher/${teacherId}`);
       const pending = res.data.filter((req) => req.status === "Pending");
       setPendingCount(pending.length);
       setDisabledAttendance(pending.length > 0);
@@ -52,7 +52,7 @@ const AddAttendance = () => {
   // Fetch attendance (including leave students)
   const fetchAttendanceLeaveStatus = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/attendance");
+      const res = await axios.get("https://ss-schoolkodbloom.onrender.com/api/attendance");
       const record = res.data.find(
         (r) =>
           r.date === date &&
@@ -134,7 +134,7 @@ const AddAttendance = () => {
         records,
       };
 
-      await axios.post("http://localhost:5000/api/attendance/add", payload);
+      await axios.post("https://ss-schoolkodbloom.onrender.com/api/attendance/add", payload);
       toast.success("✅ Attendance submitted successfully!");
       fetchAttendanceLeaveStatus();
     } catch (err) {

@@ -36,7 +36,7 @@ function AdminSignup() {
       form.append('role', formData.role);
       form.append('photo', formData.photo);
 
-      const res = await axios.post('http://localhost:5000/api/admins/signup', form, {
+      const res = await axios.post('https://ss-schoolkodbloom.onrender.com/api/admins/signup', form, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 

@@ -17,7 +17,7 @@ const AddAssignments = () => {
   // ✅ Fetch Assignments
   const fetchAssignments = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/assignments/${className}/${section}`);
+      const res = await axios.get(`https://ss-schoolkodbloom.onrender.com/api/assignments/${className}/${section}`);
       setAssignments(res.data);
     } catch (err) {
       console.error('Error fetching assignments:', err);
@@ -27,7 +27,7 @@ const AddAssignments = () => {
   // ✅ Fetch Submissions (Fixed)
   const fetchSubmissions = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/submissions/${className}/${section}`);
+      const res = await axios.get(`https://ss-schoolkodbloom.onrender.com/api/submissions/${className}/${section}`);
       const grouped = res.data.reduce((acc, sub) => {
         const assignmentId = sub.assignmentId?._id || sub.assignmentId;
         if (!acc[assignmentId]) acc[assignmentId] = [];
@@ -55,7 +55,7 @@ const AddAssignments = () => {
       return;
     }
     try {
-      const res = await axios.post('http://localhost:5000/api/assignments/add', {
+      const res = await axios.post('https://ss-schoolkodbloom.onrender.com/api/assignments/add', {
         title,
         description,
         dueDate,
@@ -78,7 +78,7 @@ const AddAssignments = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this assignment?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/assignments/${id}`);
+      await axios.delete(`https://ss-schoolkodbloom.onrender.com/api/assignments/${id}`);
       alert("Assignment deleted");
       fetchAssignments();
       fetchSubmissions();
@@ -175,7 +175,7 @@ const AddAssignments = () => {
                                 </span>
                               </span>
                               <a
-                                href={`http://localhost:5000/uploads/submissions/${sub.fileUrl}`}
+                                href={`https://ss-schoolkodbloom.onrender.com/uploads/submissions/${sub.fileUrl}`}
                                 target="_blank"
                                 rel="noreferrer"
                                 className="text-blue-900 hover:underline"

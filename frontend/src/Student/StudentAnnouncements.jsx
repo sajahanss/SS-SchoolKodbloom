@@ -11,7 +11,7 @@ const Announcements = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/announcements')
+      .get('https://ss-schoolkodbloom.onrender.com/api/announcements')
       .then((res) => {
         setAnnouncements(res.data);
         setLoading(false);

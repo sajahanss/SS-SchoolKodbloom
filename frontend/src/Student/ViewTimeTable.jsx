@@ -13,7 +13,7 @@ function ViewTimeTable() {
   useEffect(() => {
     if (className && section) {
       axios
-        .get(`http://localhost:5000/api/timetable/student/${className}/${section}`)
+        .get(`https://ss-schoolkodbloom.onrender.com/api/timetable/student/${className}/${section}`)
         .then((res) => {
           setTimeTable(res.data);
           setError('');

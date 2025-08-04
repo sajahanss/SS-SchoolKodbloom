@@ -98,7 +98,7 @@ const TeacherDashboard = () => {
                 <img
                   src={
                     profileImage
-                      ? `http://localhost:5000/uploads/${profileImage}`
+                      ? `https://ss-schoolkodbloom.onrender.com/uploads/${profileImage}`
                       : `https://ui-avatars.com/api/?name=${encodeURIComponent(name || "Teacher")}&background=random`
                   }
                   alt="Profile"

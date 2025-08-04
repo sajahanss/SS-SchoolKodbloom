@@ -23,7 +23,7 @@ const MySubjects = () => {
       }
 
       try {
-        const res = await axios.get(`http://localhost:5000/api/subjects/teacher/${teacherId}`);
+        const res = await axios.get(`https://ss-schoolkodbloom.onrender.com/api/subjects/teacher/${teacherId}`);
         if (res.data.success) {
           setSubjects(res.data.data);
         } else {

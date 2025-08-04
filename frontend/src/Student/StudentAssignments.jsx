@@ -20,9 +20,9 @@ const StudentAssignments = () => {
   const fetchAssignments = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(`http://localhost:5000/api/assignments/${className}/${section}`);
+      const res = await axios.get(`https://ss-schoolkodbloom.onrender.com/api/assignments/${className}/${section}`);
       const data = await Promise.all(res.data.map(async (a) => {
-        const r = await axios.get(`http://localhost:5000/api/submissions/check/${a._id}/${studentId}`);
+        const r = await axios.get(`https://ss-schoolkodbloom.onrender.com/api/submissions/check/${a._id}/${studentId}`);
         return { ...a, submitted: r.data.submitted };
       }));
       setAssignments(data);
@@ -62,7 +62,7 @@ const StudentAssignments = () => {
     try {
       setUploading({ ...uploading, [id]: true });
       const res = await axios.post(
-        `http://localhost:5000/api/submissions/upload/${id}`,
+        `https://ss-schoolkodbloom.onrender.com/api/submissions/upload/${id}`,
         formData,
         { headers: { 'Content-Type': 'multipart/form-data' } }
       );

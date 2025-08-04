@@ -48,7 +48,7 @@ const AdminDashboard = () => {
     if (admin.photo.startsWith("http")) {
       return admin.photo;
     }
-    return `http://localhost:5000/${admin.photo.replace(/^\/+/, "")}`;
+    return `https://ss-schoolkodbloom.onrender.com/${admin.photo.replace(/^\/+/, "")}`;
   };
 
   return (

@@ -55,9 +55,9 @@ const AdminOverview = () => {
     const fetchData = async () => {
       try {
         const [studentsRes, teachersRes, subjectsRes] = await Promise.all([
-          axios.get("http://localhost:5000/api/students/count"),
-          axios.get("http://localhost:5000/api/teachers/count"),
-          axios.get("http://localhost:5000/api/subjects/count"),
+          axios.get("https://ss-schoolkodbloom.onrender.com/api/students/count"),
+          axios.get("https://ss-schoolkodbloom.onrender.com/api/teachers/count"),
+          axios.get("https://ss-schoolkodbloom.onrender.com/api/subjects/count"),
         ]);
 
         setStudentCount(studentsRes.data.count);

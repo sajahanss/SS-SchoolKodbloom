@@ -29,7 +29,7 @@ function ManageSubjects() {
 
   const fetchSubjects = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/subjects');
+      const res = await axios.get('https://ss-schoolkodbloom.onrender.com/api/subjects');
       setSubjects(res.data.data || res.data);
     } catch (err) {
       console.error(err);
@@ -39,7 +39,7 @@ function ManageSubjects() {
 
   const fetchTeachers = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/teachers');
+      const res = await axios.get('https://ss-schoolkodbloom.onrender.com/api/teachers');
       setTeachers(res.data.data || res.data);
     } catch (err) {
       console.error(err);
@@ -66,7 +66,7 @@ function ManageSubjects() {
     if (form.subjectImage) formData.append('subjectImage', form.subjectImage);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/subjects/add', formData);
+      const res = await axios.post('https://ss-schoolkodbloom.onrender.com/api/subjects/add', formData);
       setSubjects([...subjects, res.data.data || res.data.subject]);
       setForm({ subjectName: '', teacherId: '', className: '', section: '', subjectImage: null });
       setError(null);
@@ -79,7 +79,7 @@ function ManageSubjects() {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this subject?')) return;
     try {
-      await axios.delete(`http://localhost:5000/api/subjects/${id}`);
+      await axios.delete(`https://ss-schoolkodbloom.onrender.com/api/subjects/${id}`);
       setSubjects(subjects.filter((s) => s._id !== id));
     } catch (err) {
       console.error(err);
@@ -222,7 +222,7 @@ function ManageSubjects() {
                       <div className="flex items-center gap-4">
                         {s.subjectImage ? (
                           <img
-                            src={`http://localhost:5000/uploads/${s.subjectImage}`}
+                            src={`https://ss-schoolkodbloom.onrender.com/uploads/${s.subjectImage}`}
                             alt="Subject"
                             className="object-cover w-12 h-12 rounded-md"
                           />

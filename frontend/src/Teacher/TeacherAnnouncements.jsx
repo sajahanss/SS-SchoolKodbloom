@@ -10,7 +10,7 @@ const TeacherAnnouncements = () => {
   useEffect(() => {
     const fetchAnnouncements = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/announcements");
+        const res = await axios.get("https://ss-schoolkodbloom.onrender.com/api/announcements");
         setAnnouncements(res.data);
       } catch (err) {
         console.error("Error fetching announcements:", err);

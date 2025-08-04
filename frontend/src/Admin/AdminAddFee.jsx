@@ -20,7 +20,7 @@ const AdminAddFee = () => {
   const fetchPaymentHistory = async (roll) => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/payments/by-rollno/${roll}`
+        `https://ss-schoolkodbloom.onrender.com/api/payments/by-rollno/${roll}`
       );
       setPaymentHistory(res.data);
     } catch (err) {
@@ -36,7 +36,7 @@ const AdminAddFee = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/payments/add-by-rollno", form);
+      await axios.post("https://ss-schoolkodbloom.onrender.com/api/payments/add-by-rollno", form);
       alert("✅ Fee recorded successfully!");
       fetchPaymentHistory(form.rollno); // refresh history
       setForm({ name: "", rollno: "", className: "", section: "", amount: "" });

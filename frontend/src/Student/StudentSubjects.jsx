@@ -14,7 +14,7 @@ function StudentSubjects({ className, section }) {
   const fetchSubjects = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/subjects?className=${className}&section=${section}`
+        `https://ss-schoolkodbloom.onrender.com/api/subjects?className=${className}&section=${section}`
       );
       setSubjects(res.data.data || res.data);
     } catch (err) {

@@ -34,7 +34,7 @@ const StudentLeaveRequest = () => {
 
   useEffect(() => {
     if (!studentId) return;
-    axios.get(`http://localhost:5000/api/students/${studentId}`).then((res) => {
+    axios.get(`https://ss-schoolkodbloom.onrender.com/api/students/${studentId}`).then((res) => {
       const { name, className, section } = res.data;
       setFormData((prev) => ({ ...prev, studentName: name, className, section }));
     });
@@ -43,7 +43,7 @@ const StudentLeaveRequest = () => {
   }, []);
 
   const fetchLeaveRequests = async () => {
-    const res = await axios.get(`http://localhost:5000/api/leave-requests/student/${studentId}`);
+    const res = await axios.get(`https://ss-schoolkodbloom.onrender.com/api/leave-requests/student/${studentId}`);
     setLeaveRequests(res.data);
   };
 
@@ -54,7 +54,7 @@ const StudentLeaveRequest = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/leave-requests", {
+      const res = await axios.post("https://ss-schoolkodbloom.onrender.com/api/leave-requests", {
         ...formData,
         studentId,
       });
@@ -68,7 +68,7 @@ const StudentLeaveRequest = () => {
   };
 
   const cancelRequest = async (id) => {
-    await axios.delete(`http://localhost:5000/api/leave-requests/${id}`);
+    await axios.delete(`https://ss-schoolkodbloom.onrender.com/api/leave-requests/${id}`);
     fetchLeaveRequests();
   };
 

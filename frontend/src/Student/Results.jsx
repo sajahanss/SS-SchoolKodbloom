@@ -10,7 +10,7 @@ const StudentResult = () => {
   useEffect(() => {
     const fetchResults = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/results');
+        const res = await axios.get('https://ss-schoolkodbloom.onrender.com/api/results');
         const sortedResults = res.data.sort((a, b) => new Date(b.examDate) - new Date(a.examDate));
         setResults(sortedResults);
       } catch (err) {

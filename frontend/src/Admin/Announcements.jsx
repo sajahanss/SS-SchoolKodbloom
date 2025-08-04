@@ -20,7 +20,7 @@ function AddAnnouncements() {
   const fetchAnnouncements = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:5000/api/announcements");
+      const res = await axios.get("https://ss-schoolkodbloom.onrender.com/api/announcements");
       setAnnouncements(res.data);
       setError(null);
     } catch (err) {
@@ -40,7 +40,7 @@ function AddAnnouncements() {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:5000/api/announcements/add", form);
+      const res = await axios.post("https://ss-schoolkodbloom.onrender.com/api/announcements/add", form);
       setAnnouncements([res.data, ...announcements]);
       setForm({ title: "", message: "" });
       setError(null);
@@ -58,7 +58,7 @@ function AddAnnouncements() {
     if (!window.confirm("Are you sure you want to delete this announcement?")) return;
     try {
       setLoading(true);
-      await axios.delete(`http://localhost:5000/api/announcements/${id}`);
+      await axios.delete(`https://ss-schoolkodbloom.onrender.com/api/announcements/${id}`);
       setAnnouncements(announcements.filter((a) => a._id !== id));
       setSuccess("Announcement deleted successfully!");
       setTimeout(() => setSuccess(null), 3000);

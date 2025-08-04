@@ -22,7 +22,7 @@ function ManageTeachers() {
 
   const fetchTeachers = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/teachers');
+      const res = await axios.get('https://ss-schoolkodbloom.onrender.com/api/teachers');
       const sorted = res.data.sort((a, b) => a.name.localeCompare(b.name));
       setTeachers(sorted);
     } catch (err) {
@@ -48,7 +48,7 @@ function ManageTeachers() {
     });
 
     try {
-      const res = await axios.post('http://localhost:5000/api/teachers/add', formData);
+      const res = await axios.post('https://ss-schoolkodbloom.onrender.com/api/teachers/add', formData);
       setTeachers([...teachers, res.data.teacher]);
       setForm({
         name: '',
@@ -69,7 +69,7 @@ function ManageTeachers() {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this teacher?')) return;
     try {
-      await axios.delete(`http://localhost:5000/api/teachers/${id}`);
+      await axios.delete(`https://ss-schoolkodbloom.onrender.com/api/teachers/${id}`);
       setTeachers(teachers.filter((t) => t._id !== id));
     } catch (err) {
       console.error(err);
@@ -230,7 +230,7 @@ function ManageTeachers() {
                       <div className="flex items-center gap-4">
                         {t.profileImage ? (
                           <img
-                            src={`http://localhost:5000/uploads/${t.profileImage}`}
+                            src={`https://ss-schoolkodbloom.onrender.com/uploads/${t.profileImage}`}
                             alt="Profile"
                             className="object-cover w-10 h-10 rounded-full"
                           />
